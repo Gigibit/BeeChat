@@ -1,0 +1,19 @@
+
+<ion-content>
+  <ion-list>
+    <div id="player"></div>
+    <ion-item>
+        <ion-input placeholder="..." type="text" (keyup.enter)="performSearch(query)" [(ngModel)]="query"></ion-input>
+    </ion-item>
+    <button ion-button icon-only (click)="dismiss(true)">
+        <ion-icon ios="ios-send" md="ios-send"></ion-icon>
+    </button>
+    <button ion-item *ngFor="let video of videos | async" (click)="openVideo(video)" detail-none>
+      <ion-thumbnail item-start>
+      <img [src]="video.snippet.thumbnails?.default?.url">
+    </ion-thumbnail>
+    <h2>{{ video.snippet.title }}</h2>
+    <p>{{ video.snippet.description }}</p>
+    </button>
+  </ion-list>
+</ion-content>

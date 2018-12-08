@@ -1,0 +1,103 @@
+<!--
+  Generated template for the AppaerancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Appaerance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="{{theme}}" padding>
+    <div *ngFor="let text of texts; let i = index;">
+        <div class="text-label-container" absolute-drag>
+            <ion-input id="text-{{text.id}}" [(ngModel)]="text.text"></ion-input>
+            <button ion-button icon-only (click)="delete(text)">
+                <ion-icon name="trash"></ion-icon>                
+            </button>
+        </div>
+    </div>
+    <div class="fc-message-wrapper">
+        <p id="fc-content"></p>
+    </div>
+    <ion-item id="peer-camera-container" >
+
+            <div class="view">
+                <div class="plane main">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <video muted="true" id="peer-camera" autoplay="autoplay" class="center-block"></video>
+
+        <!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front"> -->
+                    <!-- front content -->
+                <!-- </div>
+                <div class="back"> -->
+                    <!-- back content -->
+                <!-- </div>
+            </div>
+            </div> -->
+        <!-- Display video of the connected peer -->
+    </ion-item>
+    <div id="themes-container" class="context" [hidden]="hiddenThemes">
+        <div class="content">
+          <div class="first-row-of-two">
+            <div class="home-item-theme">
+                <button ion-button icon-only (click)="performChanges(Theme.CLUB)">
+                    <ion-icon ios="ios-bowtie" md="ios-bowtie"></ion-icon>                
+                  
+                </button>
+            </div>
+            <div class="home-item-theme">
+                <button ion-button icon-only (click)="performChanges(Theme.MUSIC)">
+                    <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                  
+                </button>
+            </div>
+            <div class="home-item-theme">
+                <button ion-button icon-only (click)="performChanges(Theme.SEX)">
+                    <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                  
+                </button>
+            </div>
+          </div>
+          <div class="second-row-of-two">
+            <div class="home-item-theme">
+                <button ion-button icon-only (click)="performChanges(Theme.MONEY)">
+                    <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                  
+                </button>
+            </div>
+            <div class="home-item-theme">
+                <button ion-button icon-only (click)="performChanges(Theme.DRUGS)">
+                    <ion-icon ios="ios-aperture" md="ios-aperture"></ion-icon>                
+                </button>
+            </div>
+          </div>
+          </div>
+        </div>
+        
+        <ion-list>
+          <ion-item>
+          <button ion-button (click)="changeTheme()">Thema</button>
+          <button ion-button (click)="addText()">Text</button>
+          </ion-item>
+        </ion-list>
+
+    
+        <ion-item id="message-container">
+            <ion-textarea (ionChange)="handleText(mMessage)" [(ngModel)]="mMessage" data-emoji-input="unicode" class="form-control inputMessage" name="message" id="message" placeholder="Your message here ..."></ion-textarea>
+        </ion-item>
+</ion-content>

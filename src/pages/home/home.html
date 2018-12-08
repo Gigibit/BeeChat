@@ -1,0 +1,56 @@
+
+
+<ion-content class="page-home" padding>
+<h1 class="page-home">Cheebeee</h1>
+
+    <ion-item class="username-wrapper page-home" [hidden] ="step!=1">
+      <ion-input type="text" [(ngModel)]="phone" placeholder="username..."></ion-input>
+    </ion-item>
+    <ion-item [hidden]="step==1">
+      <div class="context">
+          <div class="content">
+            <div class="first-row-of-two">
+              <div class="home-item-theme">
+                  <button ion-button icon-only (click)="login(Theme.CLUB)">
+                      <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                    
+                  </button>
+              </div>
+              <div class="home-item-theme">
+                  <button ion-button icon-only (click)="login(Theme.MUSIC)">
+                      <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                    
+                  </button>
+              </div>
+              <div class="home-item-theme">
+                  <button ion-button icon-only (click)="login(Theme.SEX)">
+                      <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                    
+                  </button>
+              </div>
+            </div>
+            <div class="second-row-of-two">
+              <div class="home-item-theme">
+                  <button ion-button icon-only (click)="login(Theme.MONEY)">
+                      <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                    
+                  </button>
+              </div>
+              <div class="home-item-theme">
+                  <button ion-button icon-only (click)="login(Theme.DRUGS)">
+                      <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+                    
+                  </button>
+              </div>
+            </div>
+            </div>
+              
+          </div>
+    </ion-item>
+
+
+
+
+    <button class="page-home" ion-button (click)="step=2">{{phase}}</button>
+
+</ion-content>

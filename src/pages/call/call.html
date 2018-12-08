@@ -1,0 +1,65 @@
+
+<!-- div id="background"></div>
+<div id="midground"></div>
+<div id="foreground"></div -->
+<ion-content class="{{theme}}" padding (swipe)="swipe($event)" >
+  <!-- ion-item [hidden]="connected">
+    <ion-input type="text" [(ngModel)]="receiver" placeholder="phone number..."></ion-input>
+  </ion-item -->
+
+
+    <div class="fc-message-wrapper" [hidden]="!readMessage">
+        <p id="fc-content">Welcome, hope this will be secret.<span class='line'>|</span></p>
+    </div>
+        <ion-item id="peer-camera-container" >
+                <!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front"> -->
+                            <!-- front content -->
+                        <!-- </div>
+                        <div class="back"> -->
+                            <!-- back content -->
+                        <!-- </div>
+                    </div>
+                </div> -->
+            <!-- Display video of the connected peer -->
+            <video muted="true" id="peer-camera" autoplay="autoplay" class="center-block"></video>
+        </ion-item>
+        <video absolute-drag id="m-camera"  autoplay playsinline autoplay="autoplay" muted="true" class="center-block"  (click)="toogleMCamera()" [hidden]="mCameraVisible"></video>
+            <!--button ion-button icon-only (click)="showCamera()">
+                    <ion-icon name={{cameraArrow}}></ion-icon>
+            </button>
+     
+            <button ion-button icon-only (click)="void">
+                <ion-icon ios="ios-resize" md="md-resize"></ion-icon>                
+            </button>
+            <button ion-button icon-only (click)="change(Theme.CLUB)">
+                <ion-icon ios="ios-resize" md="md-resize"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="change(Theme.SEX)">
+                <ion-icon ios="ios-resize" md="md-resize"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="change(Theme.MONEY)">
+                    <ion-icon ios="ios-resize" md="md-resize"></ion-icon>
+            </button>
+            
+            <button ion-button icon-only (click)="change(Theme.MUSIC)">
+                    <ion-icon ios="ios-resize" md="md-resize"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="change(Theme.SONG)">
+                <ion-icon ios="ios-resize" md="md-resize"></ion-icon>
+            </button-->
+        <div class="row">
+        
+            <ion-item [hidden]="!writeMessage"  id="message-container">
+                <ion-textarea (ionChange)=send(mMessage) [(ngModel)]="mMessage" data-emoji-input="unicode" class="form-control inputMessage" name="message" id="message" placeholder="Your message here ..."></ion-textarea>
+            </ion-item>
+        </div>
+        <button ion-button icon-only (click)="onSuggestVideo()">
+                <ion-icon ios="logo-youtube" md="logo-youtube"></ion-icon>
+        </button>
+</ion-content>
+
+
+
+

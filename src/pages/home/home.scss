@@ -1,0 +1,38 @@
+
+*{
+    text-align: center;
+}
+
+ion-content.page-home{
+    background: #222;
+}
+h1.page-home{
+    color: #fff;
+    text-align: center;
+}
+ion-item.username-wrapper.page-home{
+    margin:150px 0;
+}
+button.page-home{
+    background: #ccc;
+    color: #222;
+    margin: 20px auto;
+    width: 50%;
+    display: block;
+}
+div.first-row-of-two, div.second-row-of-two{
+    display: flex;
+    margin: 0 auto;
+}
+.home-item-theme{
+    margin: 0 auto;
+    margin: 70px 0;
+
+}
+div.first-row-of-two > div.home-item-theme{
+    width: 33.333%;
+}
+
+div.second-row-of-two > div.home-item-theme{
+    width: 50%;
+}
